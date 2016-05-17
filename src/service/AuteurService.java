@@ -1,5 +1,6 @@
 package service;
 
+import bean.Auteur;
 import dao.AuteurDao;
 import inter.AuteurInterface;
 import java.rmi.RemoteException;
@@ -11,5 +12,8 @@ public class AuteurService extends UnicastRemoteObject implements AuteurInterfac
 
     public AuteurService() throws RemoteException {
         super();
+    }
+    public Auteur findByNom(String nom) throws Exception,RemoteException{
+        return auteurDao.findByNom(nom);
     }
 }

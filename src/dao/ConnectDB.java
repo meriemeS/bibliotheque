@@ -13,7 +13,7 @@ public class ConnectDB {
     private String url = "jdbc:mysql://localhost/";
     private String user = "root";
     private String passwd = "";
-    private String dbName = "BDProjet";
+    private String dbName = "projetbd";
     private Connection conn;
     private static ConnectDB mycnx;
 

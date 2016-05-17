@@ -19,6 +19,7 @@ public class ClientService extends UnicastRemoteObject implements ClientInterfac
         super();
     }
 
+   @Override
     public int seConnecter(Client user) throws RemoteException {
         return userDao.seConnecter(user);
     }
@@ -26,17 +27,21 @@ public class ClientService extends UnicastRemoteObject implements ClientInterfac
     public int save(Client t) throws Exception, RemoteException {
         return userDao.save(t);
     }
+   @Override
      public List<Client> findAll() throws Exception, RemoteException{
           return userDao.findAll();
      }
      
+   @Override
      public int Inscription(Client client) throws RemoteException {
          return userDao.Inscription(client);
      }
-     public Client findById(String id) throws Exception,RemoteException {
+   @Override
+     public Client findById(int id) throws Exception,RemoteException {
          return userDao.findById(id);
      }
 
+   @Override
      public byte[]  getImage(String id) throws Exception,RemoteException {
        
         ResultSet rs = userDao.findAll_rs(id);
@@ -46,4 +51,9 @@ public class ClientService extends UnicastRemoteObject implements ClientInterfac
        }
          return null;
     }
+     
+   @Override
+      public Client findByLogin(String login) throws Exception,RemoteException{
+          return userDao.findByLogin(login);
+      }
 }

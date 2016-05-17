@@ -11,24 +11,23 @@ public class Categorie implements Serializable{
     private int id;
     private String lib;
 
-    public Categorie() {
-    }
-
     public Categorie(int id, String lib) {
         this.id = id;
         this.lib = lib;
+    }
+    public Categorie() {
     }
 
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-
     public String getLib() {
         return lib;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public void setLib(String lib) {

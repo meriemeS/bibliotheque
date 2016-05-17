@@ -24,7 +24,8 @@ public interface ClientInterface extends Remote {
 
     public int Inscription(Client client) throws RemoteException;
 
-    public Client findById(String id) throws Exception, RemoteException;
+    public Client findById(int id) throws Exception, RemoteException;
           public byte[]  getImage(String id) throws Exception,RemoteException;
+           public Client findByLogin(String login) throws Exception,RemoteException;
 
 }

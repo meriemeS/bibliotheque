@@ -3,6 +3,7 @@ package service;
 
 
 
+import bean.Categorie;
 import dao.CategorieDao;
 import inter.CategorieInterface;
 import java.rmi.RemoteException;
@@ -13,5 +14,11 @@ public class CategorieService extends UnicastRemoteObject implements CategorieIn
 
     public CategorieService() throws RemoteException {
         super();
+    }
+    public Categorie findById(int id) throws Exception, RemoteException{
+        return categorieDao.findById(id);
+    }
+    public Categorie findByLib(String lib) throws Exception,RemoteException{
+        return categorieDao.findByLib(lib);
     }
 }

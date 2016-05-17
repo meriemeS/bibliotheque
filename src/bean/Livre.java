@@ -2,6 +2,8 @@
 package bean;
 
 import java.io.Serializable;
+import java.util.ArrayList;
+import javax.swing.ImageIcon;
 
 
 public class Livre implements Serializable{
@@ -11,34 +13,70 @@ public class Livre implements Serializable{
     private int id_aut;
     private int id_cat;
     private String description;
-     private byte[] Image;
+    private String pdf;
+    ArrayList<ImageIcon> images;
+    private String nom_aut;
+    private String prenom_aut;
+    private String lib_cat;
 
-  
-
-    public Livre(int id, String titre, int id_aut, int id_cat, String description, byte[] Image) {
+    public Livre(int id, String titre, int id_aut, int id_cat,  String pdf,String description, ArrayList<ImageIcon> images) {
         this.id = id;
         this.titre = titre;
         this.id_aut = id_aut;
         this.id_cat = id_cat;
+        
+        this.pdf = pdf;
         this.description = description;
-        this.Image = Image;
+        this.images = images;
     }
 
-     public byte[] getImage() {
-        return Image;
+    public Livre(int id, String titre, int id_aut, int id_cat , String pdf, String description ) {
+        this.id = id;
+        this.titre = titre;
+        this.id_aut = id_aut;
+        this.id_cat = id_cat;
+        
+        this.pdf = pdf;
+        this.description = description;
     }
 
-    public void setImage(byte[] Image) {
-        this.Image = Image;
+    public Livre(String titre, String nom_aut, String prenom_aut, String lib_cat, String description) {
+        this.titre = titre;
+        
+        this.nom_aut = nom_aut;
+        this.prenom_aut = prenom_aut;
+        this.lib_cat = lib_cat;
+        this.description = description;
     }
-     
 
+    
+
+    
+
+    public Livre() {
+    }
+    
+    
+
+    public String getPdf() {
+        return pdf;
+    }
+
+    public ArrayList<ImageIcon> getImages() {
+        return images;
+    }
+
+    public void setPdf(String pdf) {
+        this.pdf = pdf;
+    }
+
+    public void setImages(ArrayList<ImageIcon> images) {
+        this.images = images;
+    }
 
   
-    public Livre() {
 
-    }
-
+   
     public int getId() {
         return id;
     }
@@ -46,10 +84,6 @@ public class Livre implements Serializable{
     public String getTitre() {
         return titre;
     }
-
-   
-
-   
 
     public int getId_aut() {
         return id_aut;
@@ -66,7 +100,6 @@ public class Livre implements Serializable{
     public void setId(int id) {
         this.id = id;
     }
-  
 
     public void setTitre(String titre) {
         this.titre = titre;
@@ -84,13 +117,29 @@ public class Livre implements Serializable{
         this.description = description;
     }
 
-    @Override
-    public String toString() {
-        return "Livre{" + "id=" + id + ", titre=" + titre + ", id_aut=" + id_aut + ", id_cat=" + id_cat + ", description=" + description + '}';
+    public String getNom_aut() {
+        return nom_aut;
     }
 
-   
-   
-    
+    public String getPrenom_aut() {
+        return prenom_aut;
+    }
+
+    public String getLib_cat() {
+        return lib_cat;
+    }
+
+    public void setNom_aut(String nom_aut) {
+        this.nom_aut = nom_aut;
+    }
+
+    public void setPrenom_aut(String prenom_aut) {
+        this.prenom_aut = prenom_aut;
+    }
+
+    public void setLib_cat(String lib_cat) {
+        this.lib_cat = lib_cat;
+    }
+  
     
 }

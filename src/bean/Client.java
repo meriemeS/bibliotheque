@@ -1,53 +1,39 @@
 package bean;
 
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Client implements Serializable {
-
-    private String id;
+    private int id;
+    private String login;
     private String nom;
     private String prenom;
     private String password;
-    private byte[] image;
-    List<Livre> livres = new ArrayList<Livre>();
 
-    public byte[] getImage() {
-        return image;
+    public Client(int id, String login, String nom, String prenom, String password) {
+        this.id = id;
+        this.login = login;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.password = password;
     }
 
-    public List<Livre> getLivres() {
-        return livres;
-    }
-
-    public void setImage(byte[] image) {
-        this.image = image;
-    }
-
-    public void setLivres(List<Livre> livres) {
-        this.livres = livres;
+    public Client(String login, String nom, String prenom, String password) {
+        this.login = login;
+        this.nom = nom;
+        this.prenom = prenom;
+        this.password = password;
     }
 
     public Client() {
     }
+    
 
- 
-
-    public String getId() {
+    public int getId() {
         return id;
     }
 
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
+    public String getLogin() {
+        return login;
     }
 
     public String getNom() {
@@ -58,6 +44,18 @@ public class Client implements Serializable {
         return prenom;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
     public void setNom(String nom) {
         this.nom = nom;
     }
@@ -66,12 +64,9 @@ public class Client implements Serializable {
         this.prenom = prenom;
     }
 
-    public List<Livre> getUsers() {
-        return livres;
+    public void setPassword(String password) {
+        this.password = password;
     }
-
-    public void setUsers(List<Livre> livres) {
-        this.livres = livres;
-    }
-
+ 
+   
 }
